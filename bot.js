@@ -1,60 +1,48 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
-
-
-
-
-
-
-
-client.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-
-  if (command === "Bb") {
-    let numArray = args.map(n=> parseInt(n));
-    let total = numArray.reduce( (p, c) => p+c);
-
-    message.channel.sendMessage(total).catch(console.error);
-  }
-  
-
-  });
-
- //-------------------------------------<الكونسل وتشغيل البوت
+const prefix = 'v!'
 
 client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`ViprBot`);
-        console.log(`---------------`);
-      console.log(`ON ${client.guilds.size} Servers `);
-    console.log(`---------------`);
   console.log(`Logged in as ${client.user.tag}!`);
+client.user.setGame(`Nothing`,"http://twitch.tv/nackzos")
+  console.log('')
+  console.log('')
+  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
+  console.log(`[Start] ${new Date()}`);
+  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
+  console.log('')
+  console.log('╔[════════════════════════════════════]╗');
+  console.log(`Logged in as * [ " ${client.user.username} " ]`);
+  console.log('')
+  console.log('Informations :')
+  console.log('')
+  console.log(`servers! [ " ${client.guilds.size} " ]`);
+  console.log(`Users! [ " ${client.users.size} " ]`);
+  console.log(`channels! [ " ${client.channels.size} " ]`);
+  console.log('╚[════════════════════════════════════]╝')
+  console.log('')
+  console.log('╔[════════════]╗')
+  console.log(' Bot Is Online')
+  console.log('╚[════════════]╝')
+  console.log('')
+  console.log('')
 });
 
-client.on('ready', function(){
-    var ms = 3000    ;
-    var setGame = ['v!help','v!help|v!inv','v!help|ViprBot','v!help | v!sup','v!help|Dev|Nackzos'];
-    var i = -1;
-    var j = 0;
-    setInterval(function (){
-        if( i == -1 ){
-            j = 1;
-        }
-        if( i == (setGame.length)-1 ){
-            j = -1;
-        }
-        i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/nackzos`);
-    }, ms);
 
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // !$say
 var prefix = "v!";
@@ -1338,15 +1326,25 @@ message.channel.sendEmbed(embed);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);
-
-
-
-
-
-
-
-
-
-
-
