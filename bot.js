@@ -36,8 +36,6 @@ client.user.setGame(`ViprBot`,`Vhelp|vinv`,`vsup|ViprBot`,"http://twitch.tv/nack
 
 
 
-
-
 // !$say
 
 client.on('message', message => {
