@@ -1,1 +1,1 @@
-node VB.js
+node bot.js
