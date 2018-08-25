@@ -593,18 +593,10 @@ client.on('message', message => {
 
 
 
-
-
-
-
-
-
-    
-
-
+ 
 
 client.on('message', message => {
-     if (message.content === "v!servers") {
+     if (message.content === "servers") {
      let embed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .addField("***Servers***" , client.guilds.size)
