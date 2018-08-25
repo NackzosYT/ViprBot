@@ -313,13 +313,9 @@ Server MemberCount : **${gmemb} **
 
 
 
-
-
-
 var temp = {
 
 };
-
 client.on("message",(message) => {
     if (message.channel.type !== "rt") return;
     if (!message.content.startsWith(prefix)) return;
