@@ -34,7 +34,7 @@ client.on('ready', function(){
     var ms = 3000    ;
     var setGame = ['v!help','v!help|v!inv','v!help|ViprBot','v!help|v!sup','v!help|Dev|Nackzos','ViprBot^-^'];
     var i = -1;
-    var j = 0;
+    var j = 1;
     setInterval(function (){
         if( i == -1 ){
             j = 1;
