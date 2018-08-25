@@ -481,7 +481,7 @@ client.on('message', message => {
 
 
 
-var prefix = "!";
+
     client.on('message', message => {
      if (message.content === "v!server") {
  var servername = message.guild.name;
