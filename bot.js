@@ -478,12 +478,8 @@ client.on('message', message => {
 
 
 
-
-
-
-
     client.on('message', message => {
-     if (message.content === "v!server") {
+     if (message.content === "server") {
  var servername = message.guild.name;
 var serverowner = message.guild.owner;
 var memberCount = message.guild.memberCount;
