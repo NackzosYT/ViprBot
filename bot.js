@@ -30,32 +30,9 @@ client.user.setGame(`Nothing`,"http://twitch.tv/nackzos")
 
 
 
-client.on('ready', function(){
-    var ms = 3000    ;
-    var setGame = ['vhelp','vhelp|v!inv','vhelp|ViprBot','vhelp|vsup','vhelp|Dev|Nackzos','ViprBot^-^'];
-    var i = -1;
-    var j = 1;
-    setInterval(function (){
-        if( i == -1 ){
-            j = 1;
-        }
-        if( i == (setGame.length)-1 ){
-            j = -1;
-        }
-        i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/nackzos`);
-    }, ms);
-
-});
 
 
-
-
-
-
-
-
-
+client.user.setGame(`vhelp | vinv | ${client.guilds.size} Servers `,"http://twitch.tv/Nackzos")
 
 
 
