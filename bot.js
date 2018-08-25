@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = 'v'
+const prefix = '&'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`ViprBot|vhelp`,"http://twitch.tv/nackzos")
+client.user.setGame(`ViprBot|&help`,"http://twitch.tv/nackzos")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -72,7 +72,7 @@ if (command == "emb") {
 
 
    client.on('message', message => {
-     if (message.content === "vinfo") {
+     if (message.content === "&info") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
@@ -85,7 +85,7 @@ if (command == "emb") {
 });
 
 client.on('message', message => {
-          var prefix = "v";
+          var prefix = "&";
     if(message.content.startsWith(prefix + 'avatar')) {
         var mentionned = message.mentions.users.first();
           var getvalueof;
@@ -119,7 +119,7 @@ client.on('ready', () => {
 });
 //Hixx
 client.on('message', message => {
-if (message.content.split(' ')[0] == 'vbc2')
+if (message.content.split(' ')[0] == '&bc2')
  message.guild.members.forEach( member => {
          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
 member.send( `${member} ! ` + "**" + message.guild.name + " : ** " + message.content.substr(3));
@@ -142,7 +142,7 @@ client.on('ready', () => {
 
 
 client.on("message", (message) => {
-    if (message.content.startsWith("vkick ")) {
+    if (message.content.startsWith("&kick ")) {
       if(!message.member.hasPermission('KICK_MEMBERS')) return message.reply('⚠ ماعندك الصلاحيات');
         var member= message.mentions.members.first();
         member.kick().then((member) => {
@@ -157,7 +157,7 @@ client.on("message", (message) => {
 
 
 client.on("message", (message) => {
-    if (message.content.startsWith("vban ")) {
+    if (message.content.startsWith("&ban ")) {
       if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply(':warning: ماعندك الصلاحيات');
         var member= message.mentions.members.first();
         member.ban().then((member) => {
@@ -174,7 +174,7 @@ client.on("message", (message) => {
 
 
 client.on('message', message => {
-   if (message.content === "vroll") {
+   if (message.content === "&roll") {
   message.channel.sendMessage(Math.floor(Math.random() * 100));
     }
 });
@@ -186,7 +186,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-if(message.content == 'vadminbot') {
+if(message.content == '&adminbot') {
          if(!message.author.id === '384722029427032075') return;
 var gimg;
 var gname;
@@ -228,7 +228,7 @@ Server MemberCount : **${gmemb} **
 
                     client.on('message', message => {
                                 if(!message.channel.guild) return;
-                        if (message.content.startsWith('vping')) {
+                        if (message.content.startsWith('&ping')) {
                             if(!message.channel.guild) return;
                             var msg = `${Date.now() - message.createdTimestamp}`
                             var api = `${Math.round(client.ping)}`
@@ -365,7 +365,7 @@ const cuttweet = [
     
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === "vhelp") {
+     if (message.content === "&help") {
                if(!message.channel.guild) return message.reply(':x:  **The orders are not in your الاوامر مو فى *لخاص**');
   let embed = new Discord.RichEmbed()
           .setAuthor(message.author.username, message.author.avatarURL)
@@ -380,53 +380,53 @@ client.on('message', message => {
 -:radio_button: *شغال 24 ساعه بأذن الله*
 -:money_with_wings:*كل الاوامر مجانيه*
 -:gear:*اكثر حماية*
-:small_orange_diamond: ***Perfix***: v
+:small_orange_diamond: ***Perfix***: &
 *علامه لازم تحطها قبل كل كلام*
-:small_blue_diamond: ***vbc***
+:small_blue_diamond: ***&bc***
 *لخاصية البرودكستات*
-:small_orange_diamond: ***vTd***
+:small_orange_diamond: ***&Td***
 *لاضهار التاريخ والساعه*
-:small_blue_diamond: ***vimage***
+:small_blue_diamond: ***&image***
 *لارسال صورة السيرفر*
-:small_orange_diamond: ***vinv***
+:small_orange_diamond: ***&inv***
 *لاضافة البوت الى سيرفرك*
-:small_blue_diamond: ***vroles***
+:small_blue_diamond: ***&roles***
 *لمعرفة الرتب الي في السيرفر*
-:small_orange_diamond: ***vmemb***
+:small_orange_diamond: ***&memb***
 *معلومات الاعضاء*
-:small_blue_diamond: ***vav***
+:small_blue_diamond: ***&av***
 *يجبلك الافتار حقك يعني صورة حسابك*
-:small_orange_diamond: ***vserver***
+:small_orange_diamond: ***&server***
 *يجبلك معلومات السيرفر*
-:small_blue_diamond: ***vid***
+:small_blue_diamond: ***&id***
 *يجبلك الملف الشخصي حقك*
-:small_orange_diamond: ***vclear***
+:small_orange_diamond: ***&clear***
 *تمسح بالعدد المطلوب*
-:small_blue_diamond: ***vban***
+:small_blue_diamond: ***&ban***
 *تبنيد عضو*
-:small_orange_diamond: ***vkick***
+:small_orange_diamond: ***&kick***
 *طرد عضو*
-:small_blue_diamond: ***vping***
+:small_blue_diamond: ***&ping***
 *يقلك كم بنق البوت*
-:small_orange_diamond: ***vservers***
+:small_orange_diamond: ***&servers***
 *يقلك كم البوت ف كم سيرفر*
-:small_blue_diamond: ***vct***
+:small_blue_diamond: ***&ct***
 *لانشاء روم كتابي*
-:small_orange_diamond: ***vcv***
+:small_orange_diamond: ***&cv***
 *لانشاء روم صوتي*
-:small_blue_diamond: ***vdelet***
+:small_blue_diamond: ***&delet***
 *لحذف روم صوتي او كتابي*
-:small_orange_diamond: ***vrooms***
+:small_orange_diamond: ***&rooms***
 *لمعرفه كم روم في ا لسيرفر وكم عددهم*
-:small_blue_diamond: ***vroles***
+:small_blue_diamond: ***&roles***
 *لمعرفه كم رتبه في السيرفر وعددهم*
-:small_orange_diamond: ***vcolorcr***
+:small_orange_diamond: ***&colorcr***
 *لعمل 140 لون*
 :small_blue_diamond: ***كت تويت***
 *للعب لعبه كت تويت*
-:small_orange_diamond: ***vsup***
+:small_orange_diamond: ***&sup***
 *لارسال سيرفر السبورت الخاص بالبوت*
-:small_blue_diamond: ***vdraw***
+:small_blue_diamond: ***&draw***
 *لكتابه الكلام في الصوره*
 :small_orange_diamond: ***سيرفر السبورت الخاص بالبوت***
 ***https://discord.gg/eaYqwUw***
@@ -443,7 +443,7 @@ client.on('message', message => {
     
     
   client.on('message', message => {
-    if(message.content == 'vmemb') {
+    if(message.content == '&memb') {
     const embed = new Discord.RichEmbed()
     .setDescription(`**Members info🔋
 :green_heart: online:   ${message.guild.members.filter(m=>m.presence.status == 'online').size}
@@ -508,7 +508,7 @@ var defaultChannel = message.guild.defaultChannel;
      
      
      client.on('message' , message => {
-    if (message.content === "vinv") {
+    if (message.content === "&inv") {
         if(!message.channel.guild) return message.reply('This Command is Only For Servers');
      const embed = new Discord.RichEmbed()
  .setColor("RANDOM")
@@ -527,40 +527,7 @@ var defaultChannel = message.guild.defaultChannel;
     
     
     
-    
-    
-    
-    
-
-    
-    
-    
-
-
-client.on("message", message => {
-    var prefix = "vclear";
-            var args = message.content.substring(prefix.length).split(" ");
-            if (message.content.startsWith(prefix + "clear")) {
-                if (!message.member.hasPermission("ADMINISTRATOR"))  return;
- if (!args[1]) {
-                                let embed3 = new Discord.RichEmbed()
-                                .setDescription("v!clear <number>")
-                                .setColor("RANDOM")
-                                message.channel.sendEmbed(embed3);
-                            } else {
-                            let messagecount = parseInt(args[1]);
-                            message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-                                                          message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-                            message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-                            let embed4 = new Discord.RichEmbed()
-                                                            .setColor("#008000")
-                                .setDescription(":white_check_mark: | Delete " + args[1] + " Message!")
-                                                                                        message.delete("..");
-                                message.channel.sendEmbed(embed4);
-                            }
-                          }
-});
-
+   
 
 
 
@@ -600,8 +567,8 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-if(message.content == 'vadminbot') {
-         if(!message.author.id === '382588507115225099') return;
+if(message.content == '&adminbot') {
+         if(!message.author.id === '378953334251454475') return;
 var gimg;
 var gname;
 var gmemb;
@@ -642,7 +609,7 @@ client.on('message', message => {
                 var prefix = "v!";
     if(message.content.split(' ')[0] == prefix + 'bc') {
         if (!args[1]) {
-    message.channel.send("**v!bc <message>**");
+    message.channel.send("**&bc <message>**");
     return;
     }
             message.guild.members.forEach(m => {
@@ -675,7 +642,7 @@ client.on('message', message => {
 
 
 client.on("message", message => {
-    const prefix = "v"
+    const prefix = "&"
               
           if(!message.channel.guild) return;
    if(message.author.bot) return;
@@ -696,7 +663,7 @@ client.on("message", message => {
   
   
   client.on("message", (message) => {
-if (message.content.startsWith("vct")) {
+if (message.content.startsWith("&ct")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'text');
@@ -709,7 +676,7 @@ message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
 
 
 client.on("message", (message) => {
-if (message.content.startsWith("vcv")) {
+if (message.content.startsWith("&cv")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'voice');
@@ -732,7 +699,7 @@ if (message.content.startsWith("vcv")) {
 
 
 client.on("message", (message) => {
-    if (message.content.startsWith('vdel')) {
+    if (message.content.startsWith('&del')) {
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
 
         let args = message.content.split(' ').slice(1);
@@ -746,7 +713,7 @@ client.on("message", (message) => {
 
 
 client.on('message', message => {
-    if (message.content === "vroles") {
+    if (message.content === "&roles") {
          if (!message.guild) return;
         var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
         const embed = new Discord.RichEmbed()
@@ -764,7 +731,7 @@ client.on('message', message => {
 
 
   client.on('message', message => {
-    if (message.content === "vrooms") {
+    if (message.content === "&rooms") {
                       if (!message.guild) return;
 
         var channels = message.guild.channels.map(channels => `${channels.name}, `).join(' ')
@@ -803,7 +770,7 @@ client.on("guildCreate", guild => {
   
 
 client.on('message', message => {
-     if (message.content === "vsup") {
+     if (message.content === "&sup") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#random")
@@ -819,7 +786,7 @@ client.on('message', message => {
 
 
     client.on('message', message => {
-              var prefix = "v";
+              var prefix = "&";
      if (message.content === "server") {
  var servername = message.guild.name;
 var serverowner = message.guild.owner;
@@ -849,7 +816,7 @@ var defaultChannel = message.guild.defaultChannel;
 
 
 client.on('message', message => {
-     if (message.content === "vhelp") {
+     if (message.content === "&help") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#random")
@@ -867,7 +834,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-          var prefix = "v";
+          var prefix = "&";
         if (message.content.startsWith(prefix + "uptime")) {
     let uptime = client.uptime;
 
@@ -925,7 +892,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    var prefix = "v"
+    var prefix = "&"
     let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
 
@@ -965,7 +932,7 @@ message.channel.sendFile(canvas.toBuffer());
 
 
 client.on('message', message => {
-    if (message.content.startsWith("vavatar")) {
+    if (message.content.startsWith("&avatar")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
@@ -1026,7 +993,7 @@ client.on("message", message => {
 
 
  client.on("message", msg => {
-           var prefix = "v";
+           var prefix = "&";
   if(msg.content.startsWith (prefix + "id")) {
     if(!msg.channel.guild) return msg.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
       const embed = new Discord.RichEmbed();
@@ -1052,7 +1019,7 @@ client.on("message", message => {
 
 
 client.on('message', function(message) {
-        var prefix = "v";
+        var prefix = "&";
         var Color = ['bff442','f4d941','ea3c62','ffffff']
         if (message.content.startsWith(prefix + 'bot')) {
         if (message.author.id !== '334435543851204618') return;  
@@ -1074,7 +1041,7 @@ message.channel.send({embed:ZmP});
 
 
 client.on('message' , message => {
-            var prefix = "v";
+            var prefix = "&";
   if (message.author.bot) return;
     if(message.content.startsWith (prefix  + 'sup')) {
 const embed = new Discord.RichEmbed()
@@ -1097,7 +1064,7 @@ message.author.sendEmbed(embed);
 
 client.on('message', function(message) {
                   if(!message.channel.guild) return;
-    if(message.content ===  'vcolorcr') {
+    if(message.content ===  '&colorcr') {
         if(message.member.hasPermission('MANAGE_ROLES')) {
             setInterval(function(){})
             message.channel.send('جاري عمل الالوان |✅')
@@ -1108,7 +1075,7 @@ client.on('message', function(message) {
 });
 
 client.on('message', message=>{
-    if (message.content ===  'vcolorcr'){
+    if (message.content ===  '&colorcr'){
               if(!message.channel.guild) return;
             if (message.member.hasPermission('MANAGE_ROLES')){
                 setInterval(function(){})
@@ -1142,7 +1109,7 @@ client.on('message', message=>{
 
 
 client.on('message', message => {
-  if (message.content === "vbot") {
+  if (message.content === "&bot") {
   let embed = new Discord.RichEmbed()
   .addField("__🛠 Bot Delevoper__" , '<@!473289083511111685>')
   .addField("__Servers__" , client.guilds.size)
