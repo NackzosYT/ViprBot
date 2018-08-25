@@ -45,7 +45,6 @@ client.user.setGame(`Nothing`,"http://twitch.tv/nackzos")
 
 
 // !$say
-var prefix = "v!";
 
 client.on('message', message => {
   if (message.author.bot) return;
