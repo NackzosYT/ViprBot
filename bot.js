@@ -4,7 +4,7 @@ const prefix = 'v'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`ViprBot`,`Vhelp|vinv`,`vsup|ViprBot`,"http://twitch.tv/nackzos")
+client.user.setGame(`ViprBot|vhelp`,"http://twitch.tv/nackzos")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
