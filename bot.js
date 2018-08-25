@@ -466,7 +466,7 @@ client.on('message', message => {
 
 
     client.on('message', message => {
-     if (message.content === "server") {
+     if (message.content === "&server") {
  var servername = message.guild.name;
 var serverowner = message.guild.owner;
 var memberCount = message.guild.memberCount;
@@ -550,7 +550,7 @@ client.on('message', message => {
  
 
 client.on('message', message => {
-     if (message.content === "servers") {
+     if (message.content === "&servers") {
      let embed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .addField("***Servers***" , client.guilds.size)
@@ -606,7 +606,7 @@ client.on('message', message => {
         if (message.guild) {
        let embed = new Discord.RichEmbed()
         let args = message.content.split(' ').slice(1).join(' ');
-                var prefix = "v!";
+                var prefix = "&";
     if(message.content.split(' ')[0] == prefix + 'bc') {
         if (!args[1]) {
     message.channel.send("**&bc <message>**");
@@ -761,11 +761,6 @@ client.on("guildCreate", guild => {
 
 
 
-
-
-
-
-
   
   
 
@@ -783,35 +778,6 @@ client.on('message', message => {
 });
 
 
-
-
-    client.on('message', message => {
-              var prefix = "&";
-     if (message.content === "server") {
- var servername = message.guild.name;
-var serverowner = message.guild.owner;
-var memberCount = message.guild.memberCount;
-var id = message.guild.id;
-var region = message.guild.region;
-var channels = message.guild.channels.size;
-var roles = message.guild.roles;
-var createdAt = message.guild.createdAt;
-var verificationLevel = message.guild.verificationLevel;
-var defaultChannel = message.guild.defaultChannel;
-    const embed = new Discord.RichEmbed()
-    .setAuthor(`${message.guild.name}`)         
-               .setFooter(`ViprBot`)
-          .setColor(0x00AE86)
-                          .addField('|- ايدي السيرفر ',`**(${message.guild.id})**`)
-                          .addField('|- الشات الأساسي في السيرفر',`**${message.guild.defaultChannel}**`, true)
-                          .addField('|- عدد اعضاء السيرفر',`**[${memberCount}]**`)
-                          .addField('|- الدوله الي موجود عليها السيرفر', `**[${message.guild.region}]**`)
-                          .addField('|- عدد الرومات الموجودة في السيرفر',`**[${message.guild.channels.size}]**`, true)
-                          .addField('|- صاحب السيرفر',`**${message.guild.owner}**`)
-                          .addField('|- تاريخ افتتاح السيرفر',`**${message.guild.createdAt}**`)
-      message.channel.send({embed})
-} 
-});
 
 
 
@@ -931,31 +897,6 @@ message.channel.sendFile(canvas.toBuffer());
 
 
 
-client.on('message', message => {
-    if (message.content.startsWith("&avatar")) {
-        var mentionned = message.mentions.users.first();
-    var x5bzm;
-      if(mentionned){
-          var x5bzm = mentionned;
-      } else {
-          var x5bzm = message.author;
-          
-      }
-        const embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setImage(`${x5bzm.avatarURL}`)
-      message.channel.sendEmbed(embed);
-    }
-});
-
-
-
-
-
-
-
-
-
 
 
 client.on("message", message => {
@@ -1018,25 +959,6 @@ client.on("message", message => {
 
 
 
-client.on('message', function(message) {
-        var prefix = "&";
-        var Color = ['bff442','f4d941','ea3c62','ffffff']
-        if (message.content.startsWith(prefix + 'bot')) {
-        if (message.author.id !== '334435543851204618') return;  
-            var ZmP = new Discord.RichEmbed()
-.setColor(`${Color[Math.floor(Math.random() * Color.length)]}`)
-.addField('**:crown: السيرفرات**','**[ '+client.guilds.size+' ]**',true)
-.addField('**:bust_in_silhouette: المستخدمين**','**[ '+client.users.size+' ]**',true)
-.addField('**:earth_africa: الرومات**','**[ '+client.channels.size+' ]**',true)
-.setFooter('!PeBot',`${client.user.avatarURL}`)
-.setTimestamp()
-message.channel.send({embed:ZmP});
-}
-});
-
-
-
-
 
 
 
@@ -1054,6 +976,33 @@ message.author.sendEmbed(embed);
 });
 
 
+
+
+
+
+client.on('message', msg => {
+  if (msg.author.bot) return;
+  if (!msg.content.startsWith(prefix)) return;
+  let command = msg.content.split(" ")[0];
+  command = command.slice(prefix.length);
+  let args = msg.content.split(" ").slice(1);
+
+    if(command === "&clear") {
+        const emoji = client.emojis.find("name", "wastebasket")
+    let textxt = args.slice(0).join("");
+    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
+    if (textxt == "") {
+        msg.delete().then
+    msg.channel.send("***```ضع عدد الرسائل التي تريد مسحها 👌```***").then(m => m.delete(3000));
+} else {
+    msg.delete().then
+    msg.delete().then
+    msg.channel.bulkDelete(textxt);
+        msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxt + "\n```").then(m => m.delete(3000));
+        }    
+    }
+}
+});
 
 
 
@@ -1111,7 +1060,7 @@ client.on('message', message=>{
 client.on('message', message => {
   if (message.content === "&bot") {
   let embed = new Discord.RichEmbed()
-  .addField("__🛠 Bot Delevoper__" , '<@!473289083511111685>')
+  .addField("__🛠 Bot Delevoper__" , '<@!378953334251454475 >')
   .addField("__Servers__" , client.guilds.size)
   .addField("__Users__" , client.users.size)
   .addField("__Channels__" , client.channels.size)
