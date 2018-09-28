@@ -76,7 +76,7 @@ if (command == "emb") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-               .setFooter(`<@!480927540618330112>`, '')
+               .setFooter(`<@!495264302551531520>`, '')
   .addField("Done | تــــم" , "✉ | تم ارسالك في الخاص")
      
      
@@ -372,7 +372,7 @@ client.on('message', message => {
            .setThumbnail(message.author.avatarURL)
                  .setTimestamp()
     .setDescription(`
-                    :gem: <@!480927540618330112> :gem:    
+                    :gem: <@!495264302551531520> :gem:    
 ***بوت عربي بالكامل***
 :small_blue_diamond:***مميزات كثيره***:small_orange_diamond: 
 -:man::rocket:***برمجة البوت 24 ساعه ويمكن ينضاف اي شي في اي لحظة ممكنة***
@@ -515,7 +515,7 @@ var defaultChannel = message.guild.defaultChannel;
  .setThumbnail(client.user.avatarURL)
  .setAuthor(message.author.username, message.author.avatarURL)
  .setTitle('Click Here To Invite The Bot')
- .setURL('https://discordapp.com/oauth2/authorize?client_id=480927540618330112&scope=bot&permissions=36760572')
+ .setURL('https://discordapp.com/oauth2/authorize?client_id=495264302551531520&scope=bot&permissions=36760572')
   message.channel.sendEmbed(embed);
    }
 });
@@ -901,13 +901,13 @@ message.channel.sendFile(canvas.toBuffer());
 
 client.on("message", message => {
                          if(message.channel.type === "dm") return;
-    var prefix = "v";
+    var prefix = "&";
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply("You Don't Have `MANAGE_MESSAGES'` Premissions ");
  if (!args[1]) {
                                 let x5bz1 = new Discord.RichEmbed()
-                                .setDescription("v!clear <number>")
+                                .setDescription("&clear <number>")
                                 .setColor("#0000FF")
                                 message.channel.sendEmbed(x5bz1);
                             } else {
@@ -970,7 +970,7 @@ const embed = new Discord.RichEmbed()
 .setColor("BLUE")
 .setAuthor(message.author.username, message.author.avatarURL)
 .setTitle(':arrow_right: اضغط هنا لدخول سيرفر السبورت')
-.setURL('https://discord.gg/aFGFsXX')
+.setURL('https://discord.gg/4hVwmrY')
 message.author.sendEmbed(embed);
 }
 });
@@ -1059,7 +1059,7 @@ client.on('message', message=>{
 client.on('message', message => {
   if (message.content === "&bot") {
   let embed = new Discord.RichEmbed()
-  .addField("__🛠 Bot Delevoper__" , '<@!378953334251454475 >')
+  .addField("__🛠 Bot Delevoper__" , '<@!487333494910091267>')
   .addField("__Servers__" , client.guilds.size)
   .addField("__Users__" , client.users.size)
   .addField("__Channels__" , client.channels.size)
