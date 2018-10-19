@@ -4,7 +4,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Nine|Bank|`,"http://twitch.tv/nackzos")
+client.user.setGame(`Nine|Bank<3`,"http://twitch.tv/nackzos")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
