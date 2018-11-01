@@ -7,8 +7,8 @@ console.log("log");
 });
 
 client.on('ready', async() => {
-var server = "507505319610417153"; 
-var channel = "507505319610417155";
+var server = "507565777294196737"; 
+var channel = "507565777294196739";
     setInterval(()=>{
     client.guilds.get(server).channels.get(channel).send('ناكزوس وبس')
     },305);
