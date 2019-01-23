@@ -7,8 +7,8 @@ console.log("log");
 });
 
 client.on('ready', async() => {
-var server = "522782467749445662"; 
-var channel = "522782561450197014";
+var server = "536930893449789440"; 
+var channel = "536930893449789442";
     setInterval(()=>{
     client.guilds.get(server).channels.get(channel).send('**BloodForEver** :leaves:')
     },305);
@@ -33,7 +33,7 @@ client.on("message", async message => {
     if (command == "leave") {
        
  
-        if(message.author.id != "510758300313452545") return message.reply("**Sorry, you don't have permission to use this!**");
+        if(message.author.id != "525335066289635338") return message.reply("**Sorry, you don't have permission to use this!**");
  
        
         if(!args[0] || args[1]) return message.reply(`**${prefix}leave <guild_id>**`);
