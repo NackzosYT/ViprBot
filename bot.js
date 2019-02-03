@@ -2,9 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "!";
 
-client.on('ready', () => {
-  console.log(Logged in as ${client.user.tag}!);
-});
+
 
 client.on('ready', async() => {
 var server = "536930893449789440"; // ايدي السررفر
