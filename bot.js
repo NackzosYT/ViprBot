@@ -1,47 +1,34 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+var prefix = "!";
 
 client.on('ready', () => {
- console.log("welcome bot"); 
-console.log("log");
+  console.log(Logged in as ${client.user.tag}!);
 });
 
 client.on('ready', async() => {
-var server = "536930893449789440"; 
-var channel = "536930893449789442";
+var server = "536930893449789440"; // ايدي السررفر
+var channel = "536930893449789442";//ايدي الروم
     setInterval(()=>{
-    client.guilds.get(server).channels.get(channel).send('**BloodForEver** :leaves:')
+    client.guilds.get(server).channels.get(channel).send('Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , ')
     },305);
 })
 
-client.on('message',function(message) {
-    let prefix = "!&";
-let args = message.content.split(" ").slice(1).join(" ");
-if(message.content.startsWith(prefix + "say")) {
-if(!args) return;
-message.channel.send(`${args}`); 
-}
-});
+client.on('message', message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
 
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
 
-client.on("message", async message => {
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
-    if(message.author.bot) return;
-    if(message.content.indexOf(prefix) !== 0) return;
- 
-    if (command == "leave") {
-       
- 
-        if(message.author.id != "525335066289635338") return message.reply("**Sorry, you don't have permission to use this!**");
- 
-       
-        if(!args[0] || args[1]) return message.reply(`**${prefix}leave <guild_id>**`);
-        let definedGuild = client.guilds.get(args[0])
-        if(!definedGuild) return message.reply(`** 404 : invalid guild id or this guild delted**`);
-        client.guilds.get(args[0]).leave()
-        .catch(error => { return message.reply(error.message) })
-    }    
-})
+  let args = message.content.split(" ").slice(1);
 
-client.login(process.env.BOT_TOKEN); 
+  if (command == "say") {
+if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('?|`ADMINISTRATOR`ليس لديك صلاحيات`');
+   message.channel.sendMessage(args.join("  "))
+   message.delete()
+  }
+ });
+
+ 
+client.login(process.env.BOT_TOKEN)
